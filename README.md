@@ -1,6 +1,5 @@
 # Group AC2: Disparity of Eudcation Opportunities
 
-## Group AC2
 Geography 458: Advanced Digital Geographies
 
 1. Anush Mughnetsyan
