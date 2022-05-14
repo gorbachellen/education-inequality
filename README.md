@@ -3,11 +3,11 @@
 ## Group AC2
 Geography 458: Advanced Digital Geographies
 
-Anush Mughnetsyan
-Ellen Gorbach
-Joshua Zhang
-Julianne Corpuz
-Megan James Plunkett
+1. Anush Mughnetsyan
+2. Ellen Gorbach
+3. Joshua Zhang
+4. Julianne Corpuz
+5. Megan James Plunkett
 
 ## Ideas, significances, and broader impacts:
 
