@@ -15,10 +15,37 @@
             projection: 'albers'
         });
 
+        const years = [
+            1995,
+            2000,
+            2005,
+            2010,
+            2015
+        ]
+
+        function filterBy(value) {
+            let year = years[value]
+            let column = 'e_' + String(year) + '_ENROLL';
+            let property = []
+            property.push('step');
+            property.push(['get', column]);
+            property.push('#feedde');
+            property.push(200000);
+            property.push('#fdbe85');
+            property.push(500000);
+            property.push('#fd8d3c');
+            property.push(1000000);
+            property.push('#e6550d');
+            property.push(2000000);
+            property.push('#a63603');
+            map.setPaintProperty('enrollData-layer', 'fill-color', property);
+            document.getElementById('year').textContent = year;
+        }
+
         async function geojsonFetch() {
             let response = await fetch('assets/sorted_enroll.geojson');
             let enrollData = await response.json();
-            let column = 'e_'
+
             map.on('load', function loadingData() {
                 map.addSource('enrollData', {
                     type: 'geojson',
@@ -26,7 +53,7 @@
                 });
 
                 map.addLayer({
-                    'id': 'countyData-layer',
+                    'id': 'enrollData-layer',
                     'type': 'fill',
                     'source': 'enrollData',
                     'paint': {
@@ -80,7 +107,12 @@
                     legend.appendChild(item);
                 });
             });
+            filterBy(0);
 
+            document.getElementById('slider').addEventListener('input', (e) => {
+                const year = parseInt(e.target.value, 10);
+                filterBy(year);
+            });
             //map.on('mousemove', ({point}) => {
                 //const county = map.queryRenderedFeatures(point, {
                     //layers: ['countyData-layer']
