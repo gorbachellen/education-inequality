@@ -23,6 +23,12 @@
             2015
         ]
 
+        const types = [
+            'ENROLL',
+            'TOTAL_REVENUE',
+            'TOTAL_EXPENDITURE',
+        ]
+
         function filterBy(value) {
             let year = years[value]
             let column = 'e_' + String(year) + '_ENROLL';
