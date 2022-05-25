@@ -31,7 +31,9 @@
 
         function filterBy(value) {
             let year = years[value]
-            let column = 'e_' + String(year) + '_ENROLL';
+            let index = document.getElementById('types').value
+            let type = types[index]
+            let column = 'e_' + String(year) + '_' + 'ENROLL';
             let property = []
             property.push('step');
             property.push(['get', column]);
