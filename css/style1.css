@@ -28,8 +28,6 @@ p {
 
 .map-overlay {
     position: absolute;
-    bottom: 0;
-    right: 0;
     border: solid black;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.8);
@@ -62,9 +60,23 @@ p {
 }
 
 #features {
+    bottom: 0;
+    right: 0;
     top: 30px;
     height: 120px;
     margin-top: 40px;
+    width: 250px;
+}
+
+#text-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 160px;
+    right: 0;
+    height: 120px;
+    margin-top: 24px;
     width: 250px;
 }
 
@@ -77,7 +89,7 @@ p {
     right: 0;
     margin-right: 20px;
     margin-bottom: 40px;
-    width: 170px;
+    width: 180px;
     border: solid black;
     border-radius: 3px;
 }

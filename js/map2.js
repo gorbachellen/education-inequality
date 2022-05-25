@@ -119,8 +119,8 @@
                 filterBy(year);
             });
             //map.on('mousemove', ({point}) => {
-                //const county = map.queryRenderedFeatures(point, {
-                    //layers: ['countyData-layer']
+                //const enroll = map.queryRenderedFeatures(point, {
+                    //layers: ['enrollData-layer']
                 //});
                //document.getElementById('text-escription').innerHTML = county.length ?
                     //`<h3>${county[0].properties.county}, ${county[0].properties.state}</h3><p><strong><em>${county[0].properties.rates}</strong> Cases per 1000 people</em></p>` :

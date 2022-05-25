@@ -23,17 +23,37 @@
             2015
         ]
 
+        const colors = {
+            'enroll' : [],
+            'revenue' : []
+        }
+
+        const layers = {}
+
         const types = [
             'ENROLL',
             'TOTAL_REVENUE',
             'TOTAL_EXPENDITURE',
         ]
 
-        function filterBy(value) {
-            let year = years[value]
-            let index = document.getElementById('types').value
-            let type = types[index]
-            let column = 'e_' + String(year) + '_' + 'ENROLL';
+        function legendWrapper(type) {
+            property = []
+            if (type == 0) { //enroll
+                print()
+            } else if (type == 1) {
+                print()
+            } else {
+                print()
+            }
+
+        }
+
+        function filterBy() {
+            let index1 = document.getElementById('slider').value;
+            let year = years[index1];
+            let index2 = document.getElementById('types').value;
+            let type = types[index2];
+            let column = 'e_' + String(year) + '_' + type;
             let property = []
             property.push('step');
             property.push(['get', column]);
@@ -117,18 +137,25 @@
             });
             filterBy(0);
 
-            document.getElementById('slider').addEventListener('input', (e) => {
-                const year = parseInt(e.target.value, 10);
-                filterBy(year);
+            document.getElementById('slider').addEventListener('input', () => {
+                filterBy();
             });
-            //map.on('mousemove', ({point}) => {
-                //const county = map.queryRenderedFeatures(point, {
-                    //layers: ['countyData-layer']
-                //});
-               //document.getElementById('text-escription').innerHTML = county.length ?
-                    //`<h3>${county[0].properties.county}, ${county[0].properties.state}</h3><p><strong><em>${county[0].properties.rates}</strong> Cases per 1000 people</em></p>` :
-                    //`<p>Hover over a county!</p>`;
-            //});
+            document.getElementById('types').addEventListener('input', () => {
+                filterBy();
+            });
+            map.on('mousemove', ({point}) => {
+                const enroll = map.queryRenderedFeatures(point, {
+                    layers: ['enrollData-layer']
+                });
+                let index1 = document.getElementById('slider').value;
+                let year = years[index1];
+                let index2 = document.getElementById('types').value;
+                let type = types[index2];
+                let column = 'e_' + String(year) + '_' + type;
+                document.getElementById('text-description').innerHTML = enroll.length ?
+                    `<h3>${enroll[0].properties.NAME}</h3><p><strong><em>${enroll[0].properties[column]}</strong> students are enrolled</em></p>` :
+                `<p>Hover over a county!</p>`;
+            });
         }
 
         geojsonFetch();
