@@ -10,8 +10,8 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 4,
-            center: [-100, 38],
+            zoom: 3.8,
+            center: [-89, 40],
             projection: 'albers'
         });
 
@@ -34,6 +34,7 @@
             'ENROLL',
             'TOTAL_REVENUE',
             'TOTAL_EXPENDITURE',
+            'INSTR_EXP_DIV_ENROLL'
         ]
 
         function legendWrapper(type) {
@@ -99,15 +100,15 @@
                             '#a63603'
                         ],
                         'fill-outline-color': '#041C32',
-                        'fill-opacity': 0.9,
+                        'fill-opacity': 0.6,
                     }
                 });
 
                 const layers = [
                     '0-200000',
-                    '200000-500000',
-                    '500000-1000000',
-                    '1000000-2000000',
+                    '200001-500000',
+                    '500001-1000000',
+                    '1000001-2000000',
                     '>2000000'
                 ];
                 const colors = [
@@ -143,6 +144,7 @@
             document.getElementById('types').addEventListener('input', () => {
                 filterBy();
             });
+
             map.on('mousemove', ({point}) => {
                 const enroll = map.queryRenderedFeatures(point, {
                     layers: ['enrollData-layer']
@@ -154,7 +156,7 @@
                 let column = 'e_' + String(year) + '_' + type;
                 document.getElementById('text-description').innerHTML = enroll.length ?
                     `<h3>${enroll[0].properties.NAME}</h3><p><strong><em>${enroll[0].properties[column]}</strong> students are enrolled</em></p>` :
-                `<p>Hover over a county!</p>`;
+                `<p>Hover over a state!</p>`;
             });
         }
 
