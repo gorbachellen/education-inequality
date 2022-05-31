@@ -1,6 +1,6 @@
 "use strict";
 
-(function() {
+(function () {
 
     window.addEventListener("load", init);
 
@@ -10,25 +10,23 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 3.8,
-            center: [-89, 40],
+            zoom: 4.3,
+            center: [-91, 39.5],
             projection: 'albers'
         });
 
         const years = [
             1995,
             2000,
+            2003,
             2005,
+            2007,
+            2009,
             2010,
+            2011,
+            2013,
             2015
         ]
-
-        const colors = {
-            'enroll' : [],
-            'revenue' : []
-        }
-
-        const layers = {}
 
         const types = [
             'ENROLL',
@@ -37,16 +35,78 @@
             'INSTR_EXP_DIV_ENROLL'
         ]
 
-        function legendWrapper(type) {
-            property = []
-            if (type == 0) { //enroll
-                print()
-            } else if (type == 1) {
-                print()
-            } else {
-                print()
-            }
+        const statements = [' students were enrolled', ' dollars were put into social programs', ' dollars were collected']
 
+        function legendWrapper(type) {
+            let property
+            let color
+            let layer
+            if (type == 0) { //enroll
+                property = [
+                    500000,
+                    1000000,
+                    1500000,
+                    2000000
+                ];
+                color = [
+                    '#feedde',
+                    '#fdbe85',
+                    '#fd8d3c',
+                    '#e6550d',
+                    '#a63603'
+                ]
+                layer = [
+                    '0-500',
+                    '501-1000',
+                    '1001-1500',
+                    '1501-2000',
+                    '>20000'
+                ]
+            } else if (type == 1) {
+                property = [
+                    7000000,
+                    14000000,
+                    21000000,
+                    28000000
+                ];
+                color = [
+                    '#feedde',
+                    '#fdbe85',
+                    '#fd8d3c',
+                    '#e6550d',
+                    '#a63603'
+                ];
+                layer = [
+                    '0-7',
+                    '8-14',
+                    '15-21',
+                    '22-28',
+                    '>28'
+                ];
+            } else {
+                property = [
+                    7000000,
+                    14000000,
+                    21000000,
+                    28000000
+                ];
+                color = [
+                    '#feedde',
+                    '#fdbe85',
+                    '#fd8d3c',
+                    '#e6550d',
+                    '#a63603'
+                ];
+                layer = [
+                    '0-7',
+                    '8-14',
+                    '15-21',
+                    '22-28',
+                    '>28'
+                ];
+            }
+            let result = [property, color, layer];
+            return result;
         }
 
         function filterBy() {
@@ -56,21 +116,49 @@
             let type = types[index2];
             let column = 'e_' + String(year) + '_' + type;
             let property = []
+            let number = legendWrapper(index2)[0];
+            let color = legendWrapper(index2)[1]
+            console.log(number)
             property.push('step');
             property.push(['get', column]);
-            property.push('#feedde');
-            property.push(200000);
-            property.push('#fdbe85');
-            property.push(500000);
-            property.push('#fd8d3c');
-            property.push(1000000);
-            property.push('#e6550d');
-            property.push(2000000);
-            property.push('#a63603');
+            for (let i = 0; i < 4; i++) {
+                property.push(color[i]);
+                property.push(number[i]);
+            };
+            property.push(color[4]);
             map.setPaintProperty('enrollData-layer', 'fill-color', property);
             document.getElementById('year').textContent = year;
         }
 
+        function legendMaker(){
+            let type = document.getElementById('types').value;
+            const layers = legendWrapper(type)[2];
+            const colors = legendWrapper(type)[1];
+            const legend = document.getElementById('legend');
+            legend.innerHTML = '';
+            let title = document.createElement('h2');
+            if (type == 0) {
+                title.textContent = 'Enrollment Number (Thousands)'
+            } else if (type == 1) {
+                title.textContent = 'Total Expenditure (millions)'
+            } else if (type == 2) {
+                title.textContent = 'Total Revenue (millions)'
+            }
+            legend.appendChild(title);
+            layers.forEach((layer, i) => {
+                const color = colors[i];
+                const item = document.createElement('div');
+                const key = document.createElement('span');
+                key.className = 'legend-key';
+                key.style.backgroundColor = color;
+
+                const value = document.createElement('span');
+                value.innerHTML = `${layer}`;
+                item.appendChild(key);
+                item.appendChild(value);
+                legend.appendChild(item);
+            });
+        }
         async function geojsonFetch() {
             let response = await fetch('assets/sorted_enroll.geojson');
             let enrollData = await response.json();
@@ -90,11 +178,11 @@
                             'step',
                             ['get', 'e_1995_ENROLL'],
                             '#feedde',
-                            200000,
-                            '#fdbe85',
                             500000,
-                            '#fd8d3c',
+                            '#fdbe85',
                             1000000,
+                            '#fd8d3c',
+                            1500000,
                             '#e6550d',
                             2000000,
                             '#a63603'
@@ -103,49 +191,21 @@
                         'fill-opacity': 0.6,
                     }
                 });
-
-                const layers = [
-                    '0-200000',
-                    '200001-500000',
-                    '500001-1000000',
-                    '1000001-2000000',
-                    '>2000000'
-                ];
-                const colors = [
-                    '#feedde90',
-                    '#fdbe8590',
-                    '#fd8d3c90',
-                    '#e6550d90',
-                    '#a6360390'
-                ];
-
-                const legend = document.getElementById('legend');
-
-
-                layers.forEach((layer, i) => {
-                    const color = colors[i];
-                    const item = document.createElement('div');
-                    const key = document.createElement('span');
-                    key.className = 'legend-key';
-                    key.style.backgroundColor = color;
-
-                    const value = document.createElement('span');
-                    value.innerHTML = `${layer}`;
-                    item.appendChild(value);
-                    item.appendChild(key);
-                    legend.appendChild(item);
-                });
+                legendMaker()
             });
-            filterBy(0);
+            filterBy();
 
             document.getElementById('slider').addEventListener('input', () => {
                 filterBy();
             });
             document.getElementById('types').addEventListener('input', () => {
                 filterBy();
+                legendMaker()
             });
 
-            map.on('mousemove', ({point}) => {
+            map.on('mousemove', ({
+                point
+            }) => {
                 const enroll = map.queryRenderedFeatures(point, {
                     layers: ['enrollData-layer']
                 });
@@ -154,9 +214,10 @@
                 let index2 = document.getElementById('types').value;
                 let type = types[index2];
                 let column = 'e_' + String(year) + '_' + type;
+
                 document.getElementById('text-description').innerHTML = enroll.length ?
-                    `<h3>${enroll[0].properties.NAME}</h3><p><strong><em>${enroll[0].properties[column]}</strong> students are enrolled</em></p>` :
-                `<p>Hover over a state!</p>`;
+                    `<h3>${enroll[0].properties.NAME}</h3><p><strong><em>${enroll[0].properties[column]}</strong>${statements[index2]}</em></p>` :
+                    `<p>Hover over a State!</p>`;
             });
         }
 
