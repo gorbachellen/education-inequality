@@ -10,19 +10,15 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 4.3,
+            zoom: 3.8,
             center: [-91, 39.5],
             projection: 'albers'
         });
 
         const years = [
-            1995,
-            2000,
-            2003,
             2005,
             2007,
             2009,
-            2010,
             2011,
             2013,
             2015
@@ -30,8 +26,8 @@
 
         const types = [
             'ENROLL',
-            'TOTAL_REVENUE',
-            'TOTAL_EXPENDITURE',
+            'INSTRUCTION_EXPENDITURE',
+            'FEDERAL_REVENUE',
             'INSTR_EXP_DIV_ENROLL'
         ]
 
@@ -49,11 +45,11 @@
                     2000000
                 ];
                 color = [
-                    '#feedde',
-                    '#fdbe85',
-                    '#fd8d3c',
-                    '#e6550d',
-                    '#a63603'
+                    '#f1eef6',
+                    '#bdc9e1',
+                    '#74a9cf',
+                    '#2b8cbe',
+                    '#045a8d'
                 ]
                 layer = [
                     '0-500',
@@ -64,45 +60,66 @@
                 ]
             } else if (type == 1) {
                 property = [
-                    7000000,
-                    14000000,
-                    21000000,
-                    28000000
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
                 ];
                 color = [
-                    '#feedde',
-                    '#fdbe85',
-                    '#fd8d3c',
-                    '#e6550d',
-                    '#a63603'
+                    '#ffffd4',
+                    '#fed98e',
+                    '#fe9929',
+                    '#d95f0e',
+                    '#993404'
                 ];
                 layer = [
-                    '0-7',
-                    '8-14',
-                    '15-21',
-                    '22-28',
-                    '>28'
+                    '0-2',
+                    '3-5',
+                    '5-10',
+                    '11-20',
+                    '>20'
+                ];
+            } else if (type == 2) {
+                property = [
+                    800000,
+                    1600000,
+                    2400000,
+                    3200000
+                ];
+                color = [
+                    '#ffffd4',
+                    '#fed98e',
+                    '#fe9929',
+                    '#d95f0e',
+                    '#993404'
+                ];
+                layer = [
+                    '0-800',
+                    '801-1600',
+                    '1601-2400',
+                    '2401-3200',
+                    '>3200'
                 ];
             } else {
                 property = [
-                    7000000,
-                    14000000,
-                    21000000,
-                    28000000
+                    2000000,
+                    5000000,
+                    10000000,
+                    20000000
                 ];
                 color = [
-                    '#feedde',
-                    '#fdbe85',
-                    '#fd8d3c',
-                    '#e6550d',
-                    '#a63603'
+                    '#f1eef6',
+                    '#bdc9e1',
+                    '#74a9cf',
+                    '#2b8cbe',
+                    '#045a8d'
                 ];
                 layer = [
-                    '0-7',
-                    '8-14',
-                    '15-21',
-                    '22-28',
-                    '>28'
+                    '0-2',
+                    '3-5',
+                    '5-10',
+                    '11-20',
+                    '>20'
                 ];
             }
             let result = [property, color, layer];
@@ -140,9 +157,9 @@
             if (type == 0) {
                 title.textContent = 'Enrollment Number (Thousands)'
             } else if (type == 1) {
-                title.textContent = 'Total Expenditure (millions)'
+                title.textContent = 'Instruction Expenditure (millions)'
             } else if (type == 2) {
-                title.textContent = 'Total Revenue (millions)'
+                title.textContent = 'Federal Revenue (Thousands)'
             }
             legend.appendChild(title);
             layers.forEach((layer, i) => {
@@ -176,16 +193,16 @@
                     'paint': {
                         'fill-color': [
                             'step',
-                            ['get', 'e_1995_ENROLL'],
-                            '#feedde',
+                            ['get', 'e_2005_ENROLL'],
+                            '#f1eef6',
                             500000,
-                            '#fdbe85',
+                            '#bdc9e1',
                             1000000,
-                            '#fd8d3c',
+                            '#74a9cf',
                             1500000,
-                            '#e6550d',
+                            '#2b8cbe',
                             2000000,
-                            '#a63603'
+                            '#045a8d'
                         ],
                         'fill-outline-color': '#041C32',
                         'fill-opacity': 0.6,
