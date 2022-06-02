@@ -31,7 +31,7 @@
             'INSTR_EXP_DIV_ENROLL'
         ]
 
-        const statements = [' students were enrolled', ' dollars were put into social programs', ' dollars were collected']
+        const statements = [' students were enrolled', ' dollars were put into social programs', ' dollars were collected', ' dollars of instruction fundings on each student']
 
         function legendWrapper(type) {
             let property
@@ -56,7 +56,7 @@
                     '501-1000',
                     '1001-1500',
                     '1501-2000',
-                    '>20000'
+                    '>2000'
                 ]
             } else if (type == 1) {
                 property = [
@@ -102,10 +102,10 @@
                 ];
             } else {
                 property = [
-                    2000000,
-                    5000000,
-                    10000000,
-                    20000000
+                    3,
+                    6,
+                    9,
+                    12
                 ];
                 color = [
                     '#f1eef6',
@@ -115,11 +115,11 @@
                     '#045a8d'
                 ];
                 layer = [
-                    '0-2',
-                    '3-5',
-                    '5-10',
-                    '11-20',
-                    '>20'
+                    '0-3',
+                    '4-6',
+                    '7-9',
+                    '9-12',
+                    '>12'
                 ];
             }
             let result = [property, color, layer];
@@ -160,6 +160,8 @@
                 title.textContent = 'Instruction Expenditure (millions)'
             } else if (type == 2) {
                 title.textContent = 'Federal Revenue (Thousands)'
+            } else {
+                title.textContent = 'Instruction Fee on Each Student(dollar)'
             }
             legend.appendChild(title);
             layers.forEach((layer, i) => {
@@ -177,7 +179,7 @@
             });
         }
         async function geojsonFetch() {
-            let response = await fetch('assets/sorted_enroll.geojson');
+            let response = await fetch('assets/map1.geojson');
             let enrollData = await response.json();
 
             map.on('load', function loadingData() {
@@ -193,15 +195,15 @@
                     'paint': {
                         'fill-color': [
                             'step',
-                            ['get', 'e_2005_ENROLL'],
+                            ['get', 'e_2005_INSTR_EXP_DIV_ENROLL'],
                             '#f1eef6',
-                            500000,
+                            3,
                             '#bdc9e1',
-                            1000000,
+                            6,
                             '#74a9cf',
-                            1500000,
+                            9,
                             '#2b8cbe',
-                            2000000,
+                            12,
                             '#045a8d'
                         ],
                         'fill-outline-color': '#041C32',
@@ -233,7 +235,7 @@
                 let column = 'e_' + String(year) + '_' + type;
 
                 document.getElementById('text-description').innerHTML = enroll.length ?
-                    `<h3>${enroll[0].properties.NAME}</h3><p><strong><em>${enroll[0].properties[column]}</strong>${statements[index2]}</em></p>` :
+                    `<h3>${enroll[0].properties.NAME}</h3><p><strong><em>${enroll[0].properties[column].toFixed(2)}</strong>${statements[index2]}</em></p>` :
                     `<p>Hover over a State!</p>`;
             });
         }

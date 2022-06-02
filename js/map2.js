@@ -1,6 +1,6 @@
 "use strict";
 
-(function() {
+(function () {
 
     window.addEventListener("load", init);
 
@@ -10,13 +10,12 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 4,
-            center: [-100, 38],
+            zoom: 3.8,
+            center: [-91, 39.5],
             projection: 'albers'
         });
 
         const years = [
-            2003,
             2005,
             2007,
             2009,
@@ -26,29 +25,115 @@
         ]
 
         const types = [
+            'VERBAL_SAT',
+            'MATH_SAT',
+            'AVG_ARTS_GPA',
+            'AVG_STEM_GPA'
         ]
 
-        function filterBy(value) {
-            let year = years[value]
-            let column = 'g_' + String(year) + '_AVG_READING_4_SCORE';
+        const statements = ['']
+
+        function legendWrapper(type) {
+            let property
+            let color
+            let layer
+            if (type == 0 || type == 1) {
+                property = [
+                    20,
+                    30,
+                    40,
+                    50
+                ];
+                color = [
+                    '#f1eef6',
+                    '#bdc9e1',
+                    '#74a9cf',
+                    '#2b8cbe',
+                    '#045a8d'
+                ]
+                layer = [
+                    '0%-20%',
+                    '21%-30%',
+                    '31%-40%',
+                    '41%-50%',
+                    '>50%'
+                ]
+            } else {
+                property = [
+                    3,
+                    3.2,
+                    3.4,
+                    3.6
+                ];
+                color = [
+                    '#ffffd4',
+                    '#fed98e',
+                    '#fe9929',
+                    '#d95f0e',
+                    '#993404'
+                ];
+                layer = [
+                    '0-3',
+                    '3.1-3.2',
+                    '3.3-3.4',
+                    '3.5-3.6',
+                    '>3.6'
+                ];
+            }
+            let result = [property, color, layer];
+            return result;
+        }
+
+        function filterBy() {
+            let index1 = document.getElementById('slider').value;
+            let year = years[index1];
+            let index2 = document.getElementById('types').value;
+            let type = types[index2];
+            let column = 'g_' + String(year) + '_' + type;
             let property = []
+            let number = legendWrapper(index2)[0];
+            let color = legendWrapper(index2)[1]
+            console.log(number)
             property.push('step');
             property.push(['get', column]);
-            property.push('#feedde');
-            property.push(220);
-            property.push('#fdbe85');
-            property.push(240);
-            property.push('#fd8d3c');
-            property.push(260);
-            property.push('#e6550d');
-            property.push(280);
-            property.push('#a63603');
+            for (let i = 0; i < 4; i++) {
+                property.push(color[i]);
+                property.push(number[i]);
+            };
+            property.push(color[4]);
             map.setPaintProperty('gradeData-layer', 'fill-color', property);
             document.getElementById('year').textContent = year;
         }
 
+        function legendMaker(){
+            let type = document.getElementById('types').value;
+            const layers = legendWrapper(type)[2];
+            const colors = legendWrapper(type)[1];
+            const legend = document.getElementById('legend');
+            legend.innerHTML = '';
+            let title = document.createElement('h2');
+            if (type == 0 || type == 1) {
+                title.textContent = 'lower percentage'
+            } else {
+                title.textContent = 'High School GPA'
+            }
+            legend.appendChild(title);
+            layers.forEach((layer, i) => {
+                const color = colors[i];
+                const item = document.createElement('div');
+                const key = document.createElement('span');
+                key.className = 'legend-key';
+                key.style.backgroundColor = color;
+
+                const value = document.createElement('span');
+                value.innerHTML = `${layer}`;
+                item.appendChild(key);
+                item.appendChild(value);
+                legend.appendChild(item);
+            });
+        }
         async function geojsonFetch() {
-            let response = await fetch('assets/sorted_grades.geojson');
+            let response = await fetch('assets/map2.geojson');
             let gradeData = await response.json();
 
             map.on('load', function loadingData() {
@@ -64,68 +149,49 @@
                     'paint': {
                         'fill-color': [
                             'step',
-                            ['get', 'g_2003_AVG_READING_4_SCORE'],
-                            '#feedde',
-                            220,
-                            '#fdbe85',
-                            240,
-                            '#fd8d3c',
-                            260,
-                            '#e6550d',
-                            280,
-                            '#a63603'
+                            ['get', 'g_2005_VERBAL_SAT'],
+                            '#f1eef6',
+                            20,
+                            '#bdc9e1',
+                            30,
+                            '#74a9cf',
+                            40,
+                            '#2b8cbe',
+                            50,
+                            '#045a8d'
                         ],
                         'fill-outline-color': '#041C32',
-                        'fill-opacity': 0.9,
+                        'fill-opacity': 0.6,
                     }
                 });
+                legendMaker()
+            });
+            filterBy();
 
-                const layers = [
-                    '220-234',
-                    '235-249',
-                    '250-264',
-                    '265-279',
-                    '280-300'
-                ];
-                const colors = [
-                    '#feedde90',
-                    '#fdbe8590',
-                    '#fd8d3c90',
-                    '#e6550d90',
-                    '#a6360390'
-                ];
+            document.getElementById('slider').addEventListener('input', () => {
+                filterBy();
+            });
+            document.getElementById('types').addEventListener('input', () => {
+                filterBy();
+                legendMaker()
+            });
 
-                const legend = document.getElementById('legend');
-
-
-                layers.forEach((layer, i) => {
-                    const color = colors[i];
-                    const item = document.createElement('div');
-                    const key = document.createElement('span');
-                    key.className = 'legend-key';
-                    key.style.backgroundColor = color;
-
-                    const value = document.createElement('span');
-                    value.innerHTML = `${layer}`;
-                    item.appendChild(value);
-                    item.appendChild(key);
-                    legend.appendChild(item);
+            map.on('mousemove', ({
+                point
+            }) => {
+                const enroll = map.queryRenderedFeatures(point, {
+                    layers: ['gradeData-layer']
                 });
-            });
-            filterBy(0);
+                let index1 = document.getElementById('slider').value;
+                let year = years[index1];
+                let index2 = document.getElementById('types').value;
+                let type = types[index2];
+                let column = 'g_' + String(year) + '_' + type;
 
-            document.getElementById('slider').addEventListener('input', (e) => {
-                const year = parseInt(e.target.value, 10);
-                filterBy(year);
+                document.getElementById('text-description').innerHTML = enroll.length ?
+                    `<h3>${enroll[0].properties.NAME}</h3><p><strong><em>${enroll[0].properties[column].toFixed(2)}</strong>${statements[index2]}</em></p>` :
+                    `<p>Hover over a State!</p>`;
             });
-            //map.on('mousemove', ({point}) => {
-                //const enroll = map.queryRenderedFeatures(point, {
-                    //layers: ['enrollData-layer']
-                //});
-               //document.getElementById('text-escription').innerHTML = county.length ?
-                    //`<h3>${county[0].properties.county}, ${county[0].properties.state}</h3><p><strong><em>${county[0].properties.rates}</strong> Cases per 1000 people</em></p>` :
-                    //`<p>Hover over a county!</p>`;
-            //});
         }
 
         geojsonFetch();
