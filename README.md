@@ -1,4 +1,4 @@
-# Group AC2: Disparity of Eudcation Opportunities
+# Group AC2: Disparity of Education Opportunities
 
 Geography 458: Advanced Digital Geographies
 
