@@ -6,7 +6,7 @@ h3 {
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 p {
@@ -64,6 +64,7 @@ p {
 
 #text-description {
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     top: 180px;
@@ -80,6 +81,7 @@ p {
     height: 100%;
     background: rgb(205, 194, 174, 0.8);
     margin-top: 50px;
+    margin-bottom: 50px;
     width: 330px;
 }
 
