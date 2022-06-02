@@ -10,13 +10,12 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 4,
-            center: [-100, 38],
+            zoom: 3.8,
+            center: [-91, 39.5],
             projection: 'albers'
         });
 
         const years = [
-            2003,
             2005,
             2007,
             2009,
@@ -26,7 +25,9 @@
         ]
 
         const types = [
+            "200_500_SAT_SCORE_PERCENT"
         ]
+
 
         function filterBy(value) {
             let year = years[value]
