@@ -10,7 +10,7 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 3.8,
+            zoom: 3,
             center: [-91, 39.5],
             projection: 'albers'
         });
@@ -269,7 +269,7 @@
                     left: 60
                 },
                 width = 330 - margin.left - margin.right,
-                height = 300 - margin.top - margin.bottom;
+                height = 250 - margin.top - margin.bottom;
 
             var svg = d3.select("#my_dataviz")
                 .append("svg")

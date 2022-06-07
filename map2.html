@@ -9,9 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="js/map2.js"></script>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style1.css">
 
 </head>
 
@@ -42,12 +44,18 @@
             <option value=2>Art GPA</option>
             <option value=3>STEM GPA</option>
         </select>
+        <br>
+        <a href='https://corgis-edu.github.io/corgis/csv/school_scores/' target="_blank">Source: CORGIS Dataset Project</a>
     </div>
     <div class='map-overlay' id='legend'>
         <h2></h2>
     </div>
     <div class='map-overlay' id="text-description">
         <p>Hover!</p>
+    </div>
+    <div class='map-overlay' id="chart">
+        <h2>Median of 200-500 Verbal SAT Score Percentage</h2>
+        <div id="my_dataviz"></div>
     </div>
 </body>
 
