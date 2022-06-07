@@ -76,6 +76,20 @@ p {
     border-radius: 3px;
 }
 
+#chart {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    top: 300px;
+    right: 0;
+    height: 400px;
+    margin-top: 24px;
+    width: 330px;
+    border-bottom: solid black;
+    border-radius: 3px;
+}
+
 #background {
     right: 0;
     height: 100%;
