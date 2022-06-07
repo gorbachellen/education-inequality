@@ -39,7 +39,6 @@ This project uses the applied library of **mapbox** and the web service **github
 * [Education Statistics: Facts About American Schools](https://www.edweek.org/leadership/education-statistics-facts-about-american-schools/2019/01)
 
 * [Jonathan Kozol - Savage Inequalities](https://www.youtube.com/watch?v=f6wCsAXmjdI)
-We plan to add more news articles and statistic data for multimedia
 
 ## Defining Terms
 
