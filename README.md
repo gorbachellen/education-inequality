@@ -67,6 +67,8 @@ This map will use the location of each public school in King county to show a di
 ## Recognition of Potential Biases
 We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
 
+[Source:] (https://www.forbes.com/sites/kimelsesser/2019/12/11/lawsuit-claims-sat-and-act-are-biased-heres-what-research-says/?sh=704a15bf3c42)
+
 ## Credits:
 
 This github repository is a work based on guidelines from Geog 458 Advanced Digital Geographies created by Professor Bo Zhao from University of Washington.
