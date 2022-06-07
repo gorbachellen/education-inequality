@@ -42,19 +42,21 @@ We will be making a generic digital geographies project because we want the audi
 
 ### Choropleth Maps(Using NCES education dataset and USA population dataset):
 
-1. Map 1 explores income and investment in public high schools through a collection of choropleth maps dated 2005 to 2015. Each map’s data is filtered by the categories of “Money on Students”, “Enrollment”, “Instruction Expenditure”, and “Federal Revenue”. By displaying the progress (or lack thereof) of schools over time, we begin to paint a picture of how school is valued through the lens of money. How much is spent? Where? This leads us to Map 2, where we delve into academic performance by state.
+#### Map 1 
+Map 1 explores income and investment in public high schools through a collection of choropleth maps dated 2005 to 2015. Each map’s data is filtered by the categories of “Money on Students”, “Enrollment”, “Instruction Expenditure”, and “Federal Revenue”. By displaying the progress (or lack thereof) of schools over time, we begin to paint a picture of how school is valued through the lens of money. How much is spent? Where? This leads us to Map 2, where we delve into academic performance by state.
 
-2. Map 2 tells the story of scores. Data is presented as a collection of choropleth maps dated 2005-2015, broken down by “Verbal SAT”, “Math SAT”, “Art GPA”, and “STEM GPA”. Paired now with Map 1, we can build a greater understanding of potential association between money and performance. Questions we could ask ourselves are: Where are the best scores? Where are the worst?
+#### Map 2
+Map 2 tells the story of scores. Data is presented as a collection of choropleth maps dated 2005-2015, broken down by “Verbal SAT”, “Math SAT”, “Art GPA”, and “STEM GPA”. Paired now with Map 1, we can build a greater understanding of potential association between money and performance. Questions we could ask ourselves are: Where are the best scores? Where are the worst?
 
-#### Defining Terms
+> Defining Terms
 
-Map 1:
+> Map 1:
 “Money on Students”: Spending on student instruction fees (per student), measured in dollars
 “Enrollment”: Total number of students enrolled in public school (in thousands of students)
 “Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees
 “Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars
 
-Map 2:
+> Map 2:
 “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
 “Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
 “Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA
