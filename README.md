@@ -50,11 +50,14 @@ Map 2 tells the story of scores. Data is presented as a collection of choropleth
 
 ### Defining Terms
 
+<p>This is the first line.<br>
+And this is the second line.</p>
+
 **Map 1:**
-**“Money on Students”:** Spending on student instruction fees (per student), measured in dollars
-**“Enrollment”:** Total number of students enrolled in public school (in thousands of students)
-**“Instruction Expenditure”:** Total expenditure (in millions of dollars) for all students spent on instruction fees
-**“Federal Revenue”:** Total amount allocated to public schools, measures in thousands of dollars
+<p> **“Money on Students”:** Spending on student instruction fees (per student), measured in dollars <br>
+**“Enrollment”:** Total number of students enrolled in public school (in thousands of students)<br>
+**“Instruction Expenditure”:** Total expenditure (in millions of dollars) for all students spent on instruction fees <br>
+**“Federal Revenue”:** Total amount allocated to public schools, measures in thousands of dollars </p>
 
 **Map 2:**
 **“Verbal SAT”:** Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
