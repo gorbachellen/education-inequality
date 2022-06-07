@@ -8,7 +8,7 @@ Geography 458: Advanced Digital Geographies
 4. Julianne Corpuz
 5. Megan James Plunkett
 
-## Ideas, significances, and broader impacts:
+## Ideas, Significances, and Broader Impacts:
 
 <p align="center">
   <img src="img/book.jpg" width="300">
@@ -36,11 +36,11 @@ Our target audiences are parents from each state. Consequently, we have decided 
 * [Jonathan Kozol - Savage Inequalities](https://www.youtube.com/watch?v=f6wCsAXmjdI)
 We plan to add more news articles and statistic data for multimedia
 
-## Project format:
+## Project Format:
 
 We will be making a generic digital geographies project because we want the audience to explore areas in the area their family members live after we introduce our ideas. The projection of the map will be Albers equal area conic projection to show the lower states. We want to use a light monochrome basemap to show the best visual contrast. We will use zoom 4 for initial overview and -100, 38 for long and lat. So far, we plan to make two major choropleth maps and a dot density map.
 
-### Choropleth Maps(Using NCES education dataset and USA population dataset):
+### Choropleth Maps (Using NCES education dataset and USA population dataset):
 
 Map 1 explores income and investment in public high schools through a collection of choropleth maps dated 2005 to 2015. Each map’s data is filtered by the categories of “Money on Students”, “Enrollment”, “Instruction Expenditure”, and “Federal Revenue”. By displaying the progress (or lack thereof) of schools over time, we begin to paint a picture of how school is valued through the lens of money. How much is spent? Where? This leads us to Map 2, where we delve into academic performance by state.
 
@@ -48,14 +48,17 @@ Map 2 tells the story of scores. Data is presented as a collection of choropleth
 
 ### Dot Density Map (Using NCES School Locations Dataset and King county average income dataset):
 
-This map will use the location of each public school in King county to show a distribution of public schools. In fact, we want to use census tract average income data to be a choropleth basemap for the dots of schools. The goal of this map is to show the unequal distribution of public school resources to hook the audience's interest and explore how income plays a role in the quality of education that students are receiving. 
+Map 3 will use the location of each public school in King county to show a distribution of public schools. In fact, we want to use census tract average income data to be a choropleth basemap for the dots of schools. The goal of this map is to show the unequal distribution of public school resources to hook the audience's interest and explore how income plays a role in the quality of education that students are receiving. 
 
 ## Defining Terms
 
 **Map 1:**
 <p> “Money on Students”: Spending on student instruction fees (per student), measured in dollars <br>
+ <br>
 “Enrollment”: Total number of students enrolled in public school (in thousands of students)<br>
+ <br>
 “Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees <br>
+ <br>
 “Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars </p>
 
 **Map 2:**
