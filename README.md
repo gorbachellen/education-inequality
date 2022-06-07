@@ -18,11 +18,11 @@ Through our final project, we hope to map the disparities between education oppo
 
 Demonstrating how living in one location in one’s childhood will impact his or her entire life due to the financial status or the funding from local government to the public school system is the vital factor that highlights the significance of our project. However, our project is not intended to point fingers and create a person or entity to blame. Rather, we want to show the milestones of improvements in each area with our map and give potential advice on the reallocation of public school resources from the federal government.
 
-## Targeted Audiences:
+## Target Audience:
 
 Our target audiences are parents from each state. Consequently, we have decided to forgo jargon and instead use language that is easy to understand such as the average expenditure on the public school systems for each enrolled student and the childrens’ academic achievement in the exams. The key takeaway we want our audience to have is motivation to speak up for their child because every child in the primary stage of their academic life deserves equal opportunities.
 
-## Primary Datasets and required functions:
+## Primary Datasets and Required Functions:
 
 1. [U.S. Education Datasets: Unification Project](https://www.kaggle.com/datasets/noriuk/us-education-datasets-unification-project) is a combination of datasets of each state’s total revenue, expenditure, enrolled K-12 students, and students’ academic achievements. The data resources are all from the U.S. Census Bureau and the National Center for Education Statistics (NCES). We plan to make 2 thematic layers on these datasets which we will cover in the project format section of the proposal.  Because we want to show the educational investment in each state as independent variables and academic achievement as the dependent variables, we will allow the users to see details in each layer and compare their places of interest by themselves. There will be separate map layers for years between 1993 and 2016. In addition, we have to connect the dataset to a shapefile in order to make it a map.
 
@@ -67,7 +67,7 @@ This map will use the location of each public school in King county to show a di
 ## Recognition of Potential Biases
 We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
 
-[Source:] (https://www.forbes.com/sites/kimelsesser/2019/12/11/lawsuit-claims-sat-and-act-are-biased-heres-what-research-says/?sh=704a15bf3c42)
+[Source](https://www.forbes.com/sites/kimelsesser/2019/12/11/lawsuit-claims-sat-and-act-are-biased-heres-what-research-says/?sh=704a15bf3c42)
 
 ## Credits:
 
