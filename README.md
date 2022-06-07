@@ -53,7 +53,7 @@ This map will use the location of each public school in King county to show a di
 ## Defining Terms
 
 **Map 1:**
-<p> “Money on Students”:Spending on student instruction fees (per student), measured in dollars <br>
+<p> “Money on Students”: Spending on student instruction fees (per student), measured in dollars <br>
 “Enrollment”: Total number of students enrolled in public school (in thousands of students)<br>
 “Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees <br>
 “Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars </p>
@@ -63,8 +63,8 @@ This map will use the location of each public school in King county to show a di
 “Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
 “Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA <br>
 “STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA </p>
-## Recognition of Potential Biases
 
+## Recognition of Potential Biases
 We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
 
 ## Credits:
