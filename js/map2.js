@@ -10,7 +10,7 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 3.8,
+            zoom: 3,
             center: [-91, 39.5],
             projection: 'albers'
         });
@@ -31,7 +31,11 @@
             'AVG_STEM_GPA'
         ]
 
-        const statements = ['']
+        const statements = ['percentages of students are in lower score range of Verbal SAT',
+                            'percentages of students are in lower score range of Math SAT',
+                            'is the average GPA for art classes',
+                            'is the average GPA for STEM classes'
+                            ];
 
         function legendWrapper(type) {
             let property
@@ -105,7 +109,7 @@
             document.getElementById('year').textContent = year;
         }
 
-        function legendMaker(){
+        function legendMaker() {
             let type = document.getElementById('types').value;
             const layers = legendWrapper(type)[2];
             const colors = legendWrapper(type)[1];
@@ -173,7 +177,9 @@
             });
             document.getElementById('types').addEventListener('input', () => {
                 filterBy();
-                legendMaker()
+                legendMaker();
+                updateChart();
+
             });
 
             map.on('mousemove', ({
@@ -195,5 +201,133 @@
         }
 
         geojsonFetch();
+        updateChart();
+
+        function updateChart() {
+            let chart = document.querySelector('#my_dataviz');
+            let title = document.querySelector('#chart h2');
+            chart.innerHTML = '';
+            let type = document.getElementById('types').value;
+            let group = ['Median_Verbal_SAT', 'Median_Math_SAT', 'Median_Arts_GPA', 'Median_STEM_GPA'];
+            let column = group[type];
+            let domain = [3.0, 3.7];
+            if (type == 0) {
+                title.innerHTML = 'Median of 200-500 Verbal SAT Score Percentage';
+                domain = [35, 45];
+            } else if (type == 1) {
+                title.innerHTML = 'Median of 200-500 Math SAT Score Percentage';
+                domain = [35, 45];
+            } else if (type == 2) {
+                title.innerHTML = 'USA Median Art Class GPA';
+                domain = [3.0, 3.7];
+            } else {
+                title.innerHTML = 'USA Median STEM Class GPA';
+            }
+            var margin = {
+                    top: 10,
+                    right: 30,
+                    bottom: 30,
+                    left: 60
+                },
+                width = 330 - margin.left - margin.right,
+                height = 250 - margin.top - margin.bottom;
+
+            var svg = d3.select("#my_dataviz")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+
+            //Read the data
+            d3.csv("assets/chart.csv",
+
+
+                // Now I can use this dataset:
+                function (data) {
+
+                    // Add X axis --> it is a Year format
+                    var x = d3.scaleLinear()
+                        .domain([2005, 2015])
+                        .range([0, width]);
+                    svg.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(x))
+                        .selectAll("text")
+                        .attr("transform", "translate(-10,10)rotate(-45)")
+
+                    // Add Y axis
+                    var y = d3.scaleLinear()
+                        .domain(domain)
+                        .range([height, 0]);
+                    svg.append("g")
+                        .call(d3.axisLeft(y));
+
+                    // Add the line
+                    svg.append("path")
+                        .datum(data)
+                        .attr("fill", "none")
+                        .attr("stroke", "black")
+                        .attr("stroke-width", 1.5)
+                        .attr("d", d3.line()
+                            .x(function (d) {
+                                return x(d.Year)
+                            })
+                            .y(function (d) {
+                                return y(d[column])
+                            })
+                        )
+
+                    // create a tooltip
+                    var Tooltip = d3.select("#my_dataviz")
+                        .append("div")
+                        .style("opacity", 0)
+                        .attr("class", "tooltip")
+                        .style("background-color", "white")
+                        .style("border", "solid")
+                        .style("border-width", "2px")
+                        .style("border-radius", "5px")
+                        .style("padding", "5px")
+
+                    // Three function that change the tooltip when user hover / move / leave a cell
+                    var mouseover = function (d) {
+                        Tooltip
+                            .style("opacity", 1)
+                    }
+                    var mousemove = function (d) {
+                        Tooltip
+                            .html(`Exact ${column}: ` + d[column])
+                            .style("left", (d3.mouse(this)[0] + 70) + "px")
+                            .style("top", (d3.mouse(this)[1]) + "px")
+                    }
+                    var mouseleave = function (d) {
+                        Tooltip
+                            .style("opacity", 0)
+                    }
+
+                    // Add the points
+                    svg
+                        .append("g")
+                        .selectAll("dot")
+                        .data(data)
+                        .enter()
+                        .append("circle")
+                        .attr("class", "myCircle")
+                        .attr("cx", function (d) {
+                            return x(d.Year)
+                        })
+                        .attr("cy", function (d) {
+                            return y(d[column])
+                        })
+                        .attr("r", 8)
+                        .attr("stroke", "#69b3a2")
+                        .attr("stroke-width", 3)
+                        .attr("fill", "white")
+                        .on("mouseover", mouseover)
+                        .on("mousemove", mousemove)
+                        .on("mouseleave", mouseleave)
+                })
+        }
     }
 })();
