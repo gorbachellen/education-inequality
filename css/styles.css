@@ -4473,23 +4473,23 @@ textarea.form-control-lg {
 }
 
 .navbar-dark .navbar-brand {
-  color: mediumseagreen;
+  color: black;
 }
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: mediumseagreen;
+  color: black;
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: mediumseagreen;
+  color: black;
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  color: mediumseagreen;
+  color: black;
 }
 .navbar-dark .navbar-nav .nav-link.disabled {
-  color: mediumseagreen;
+  color: black;
 }
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: mediumseagreen;
+  color: black;
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.55);
