@@ -63,8 +63,11 @@ Map 3 will use the location of each public school in King county to show a distr
 
 **Map 2:**
 <p> “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
+ <br>
 “Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
+ <br>
 “Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA <br>
+  <br>
 “STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA </p>
 
 ## Recognition of Potential Biases
