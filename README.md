@@ -48,7 +48,11 @@ Map 1 explores income and investment in public high schools through a collection
 #### Map 2
 Map 2 tells the story of scores. Data is presented as a collection of choropleth maps dated 2005-2015, broken down by “Verbal SAT”, “Math SAT”, “Art GPA”, and “STEM GPA”. Paired now with Map 1, we can build a greater understanding of potential association between money and performance. Questions we could ask ourselves are: Where are the best scores? Where are the worst?
 
-### Defining Terms
+### Dot Density Map (Using NCES School Locations Dataset and King county average income dataset):
+
+This map will use the location of each public school in King county to show a distribution of public schools. In fact, we want to use census tract average income data to be a choropleth basemap for the dots of schools. The goal of this map is to show the unequal distribution of public school resources to hook the audience's interest.
+
+## Defining Terms
 
 **Map 1:**
 <p> “Money on Students”:Spending on student instruction fees (per student), measured in dollars <br>
@@ -61,11 +65,6 @@ Map 2 tells the story of scores. Data is presented as a collection of choropleth
 “Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
 “Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA <br>
 “STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA </p>
-
-### Dot Density Map (Using NCES School Locations Dataset and King county average income dataset):
-
-This map will use the location of each public school in King county to show a distribution of public schools. In fact, we want to use census tract average income data to be a choropleth basemap for the dots of schools. The goal of this map is to show the unequal distribution of public school resources to hook the audience's interest.
-
 ## Recognition of Potential Biases
 
 We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
