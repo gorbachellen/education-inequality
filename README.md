@@ -48,7 +48,7 @@ Map 2 tells the story of scores. Data is presented as a collection of choropleth
 
 ### Dot Density Map (Using NCES School Locations Dataset and King county average income dataset):
 
-This map will use the location of each public school in King county to show a distribution of public schools. In fact, we want to use census tract average income data to be a choropleth basemap for the dots of schools. The goal of this map is to show the unequal distribution of public school resources to hook the audience's interest.
+This map will use the location of each public school in King county to show a distribution of public schools. In fact, we want to use census tract average income data to be a choropleth basemap for the dots of schools. The goal of this map is to show the unequal distribution of public school resources to hook the audience's interest and explore how income plays a role in the quality of education that students are receiving. 
 
 ## Defining Terms
 
