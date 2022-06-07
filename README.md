@@ -1,6 +1,6 @@
 # Group AC2: Disparity of Education Opportunities
 
-Geography 458: Advanced Digital Geographies
+## Geography 458 Project Team Members
 
 1. Anush Mughnetsyan
 2. Ellen Gorbach
@@ -8,7 +8,10 @@ Geography 458: Advanced Digital Geographies
 4. Julianne Corpuz
 5. Megan James Plunkett
 
-## Ideas, Significances, and Broader Impacts:
+## Project url
+[url here]()
+
+## Project Description
 
 <p align="center">
   <img src="img/book.jpg" width="300">
@@ -62,7 +65,7 @@ We will be making a generic digital geographies project because we want the audi
 “Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars </p>
  <br>
 
-**Map of Academic Achievement:**
+**Map of Academic Achievement**
 <p> “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
  <br>
 “Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
