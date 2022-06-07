@@ -50,20 +50,17 @@ Map 2 tells the story of scores. Data is presented as a collection of choropleth
 
 ### Defining Terms
 
-<p>This is the first line.<br>
-And this is the second line.</p>
-
 **Map 1:**
-<p> **“Money on Students”:** Spending on student instruction fees (per student), measured in dollars <br>
-**“Enrollment”:** Total number of students enrolled in public school (in thousands of students)<br>
-**“Instruction Expenditure”:** Total expenditure (in millions of dollars) for all students spent on instruction fees <br>
-**“Federal Revenue”:** Total amount allocated to public schools, measures in thousands of dollars </p>
+<p> “Money on Students”:Spending on student instruction fees (per student), measured in dollars <br>
+“Enrollment”: Total number of students enrolled in public school (in thousands of students)<br>
+“Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees <br>
+“Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars </p>
 
 **Map 2:**
-**“Verbal SAT”:** Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
-**“Math SAT”:** Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
-**“Art GPA”:** Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA
-**“STEM GPA”:** Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA
+<p> “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
+“Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
+“Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA <br>
+“STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA </p>
 
 ### Dot Density Map (Using NCES School Locations Dataset and King county average income dataset):
 
