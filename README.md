@@ -8,7 +8,7 @@
 4. Julianne Corpuz
 5. Megan James Plunkett
 
-[Link to project](Link here)
+[Link to project](gorbachellen.githhub.io/education-inequality)
 
 ## Project Description and Goal
 
