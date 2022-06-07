@@ -60,6 +60,7 @@ We will be making a generic digital geographies project because we want the audi
 “Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees <br>
  <br>
 “Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars </p>
+ <br>
 
 **Map 2:**
 <p> “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
