@@ -33,12 +33,12 @@ Our target audiences are parents from each state. Consequently, we have decided 
 3. The other minor datasets that we will be using include the U.S. Census Population Counts, [King County and its Cities](https://data.kingcounty.gov/Demographics/2010-U-S-Census-Population-Counts-King-County-and-/cavj-x985) and the [State Population Totals: 2010-2019](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html) to optimize the other datasets mentioned above. Additionally, we will also use the [Cartographic Boundary Files - Shapefile](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) for our shapefiles.
 
 ## Applied Libraries and Web Services
+This project uses the applied library of **mapbox** and the web service **github**, where our repository exists. 
 
 ## Multimedia
 * [Education Statistics: Facts About American Schools](https://www.edweek.org/leadership/education-statistics-facts-about-american-schools/2019/01)
 
 * [Jonathan Kozol - Savage Inequalities](https://www.youtube.com/watch?v=f6wCsAXmjdI)
-We plan to add more news articles and statistic data for multimedia
 
 ## Defining Terms
 
