@@ -37,8 +37,6 @@ Our target audiences are parents from each state. Consequently, we have decided 
 * [GitHub](https://github.com/) for hosting the project repository
 * [Start Bootstrap](https://startbootstrap.com/) for website templates
 
-This project uses the applied library of **mapbox** and the web service **github**, where our repository exists. 
-
 ## Multimedia
 * [Education Statistics: Facts About American Schools](https://www.edweek.org/leadership/education-statistics-facts-about-american-schools/2019/01)
 
