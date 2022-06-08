@@ -45,29 +45,28 @@ Our target audiences are parents from each state. Consequently, we have decided 
 
 ## Multimedia
 * [Education Statistics: Facts About American Schools](https://www.edweek.org/leadership/education-statistics-facts-about-american-schools/2019/01)
-
 * [Jonathan Kozol - Savage Inequalities](https://www.youtube.com/watch?v=f6wCsAXmjdI)
 
 ## Defining Terms
 
 **Map of Education and Investment**
-<p> “Money on Students”: Spending on student instruction fees (per student), measured in dollars <br>
- <br>
-“Enrollment”: Total number of students enrolled in public school (in thousands of students)<br>
- <br>
-“Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees <br>
- <br>
-“Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars </p>
- <br>
+> “Money on Students”: Spending on student instruction fees (per student), measured in dollars
+ 
+>“Enrollment”: Total number of students enrolled in public school (in thousands of students)<br>
+
+>“Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees 
+ 
+>“Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars
+ 
 
 **Map of Academic Achievement**
-<p> “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
- <br>
-“Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. <br>
- <br>
-“Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA <br>
-  <br>
-“STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA </p>
+> “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
+
+>“Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources.
+
+>“Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA
+
+>“STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA
 
 ## Recognition of Potential Biases
 We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
