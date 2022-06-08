@@ -31,10 +31,10 @@
             'AVG_STEM_GPA'
         ]
 
-        const statements = ['percentages of students are in lower score range of Verbal SAT',
-                            'percentages of students are in lower score range of Math SAT',
-                            'is the average GPA for art classes',
-                            'is the average GPA for STEM classes'
+        const statements = [' percentages of students are in lower score range of Verbal SAT',
+                            ' percentages of students are in lower score range of Math SAT',
+                            ' is the average GPA for art classes',
+                            ' is the average GPA for STEM classes'
                             ];
 
         function legendWrapper(type) {
