@@ -10,7 +10,7 @@
         let map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 3,
+            zoom: 3.3,
             center: [-91, 39.5],
             projection: 'albers'
         });
