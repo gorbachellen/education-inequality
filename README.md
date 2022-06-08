@@ -33,6 +33,10 @@ Our target audiences are parents from each state. Consequently, we have decided 
 3. The other minor datasets that we will be using include the U.S. Census Population Counts, [King County and its Cities](https://data.kingcounty.gov/Demographics/2010-U-S-Census-Population-Counts-King-County-and-/cavj-x985) and the [State Population Totals: 2010-2019](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html) to optimize the other datasets mentioned above. Additionally, we will also use the [Cartographic Boundary Files - Shapefile](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) for our shapefiles.
 
 ## Applied Libraries and Web Services
+* [Mapbox](https://www.mapbox.com/) for map creation
+* [GitHub](https://github.com/) for hosting the project repository
+* [Start Bootstrap](https://startbootstrap.com/) for website templates
+
 This project uses the applied library of **mapbox** and the web service **github**, where our repository exists. 
 
 ## Multimedia
@@ -64,7 +68,7 @@ This project uses the applied library of **mapbox** and the web service **github
 ## Recognition of Potential Biases
 We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
 
-[Source](https://www.forbes.com/sites/kimelsesser/2019/12/11/lawsuit-claims-sat-and-act-are-biased-heres-what-research-says/?sh=704a15bf3c42)
+[Source: Forbes article](https://www.forbes.com/sites/kimelsesser/2019/12/11/lawsuit-claims-sat-and-act-are-biased-heres-what-research-says/?sh=704a15bf3c42)
 
 ## Acknowledgement
 
