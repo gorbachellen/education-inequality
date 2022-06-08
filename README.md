@@ -42,6 +42,7 @@ Our target audiences are parents from each state. Consequently, we have decided 
 * [Mapbox](https://www.mapbox.com/) for map creation
 * [GitHub](https://github.com/) for hosting the project repository
 * [Start Bootstrap](https://startbootstrap.com/) for website templates
+* [D3 js](https://d3js.org/) for chart visualization
 
 ## Multimedia
 * [Education Statistics: Facts About American Schools](https://www.edweek.org/leadership/education-statistics-facts-about-american-schools/2019/01)
@@ -70,7 +71,7 @@ Our target audiences are parents from each state. Consequently, we have decided 
 “STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA </p>
 
 ## Recognition of Potential Biases
-We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
+We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically.
 
 [Source: Forbes article](https://www.forbes.com/sites/kimelsesser/2019/12/11/lawsuit-claims-sat-and-act-are-biased-heres-what-research-says/?sh=704a15bf3c42)
 
