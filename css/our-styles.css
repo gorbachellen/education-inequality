@@ -13,3 +13,7 @@
   border-bottom: solid black;
   border-radius: 2%
 }
+
+.navbar-brand {
+  font-weight: bold;
+}
