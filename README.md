@@ -33,9 +33,9 @@ Our target audiences are parents from each state. Consequently, we have decided 
 ## Primary Sources
 
 1. [U.S. Education Datasets: Unification Project](https://www.kaggle.com/datasets/noriuk/us-education-datasets-unification-project) is a combination of datasets of each state’s total revenue, expenditure, enrolled K-12 students, and students’ academic achievements. The data resources are all from the U.S. Census Bureau and the National Center for Education Statistics (NCES). We plan to make 2 thematic layers on these datasets which we will cover in the project format section of the proposal.  Because we want to show the educational investment in each state as independent variables and academic achievement as the dependent variables, we will allow the users to see details in each layer and compare their places of interest by themselves. There will be separate map layers for years between 1993 and 2016. In addition, we have to connect the dataset to a shapefile in order to make it a map.
-
+<br>
 2. Another dataset that our team will use is [NCES School Locations Dataset 2020-2021](https://nces.ed.gov/programs/edge/geographic/schoollocations). This dataset is from the National Center for Education Statistics and it provides the location and name of every public school across all counties between 2020 and 2021. We plan to use the King county portion of the dataset to create a dot density map to make a distinction of where we are all currently residing and where the project was created. The reason why we are only providing a dot density for King County is to ensure that our audience is not being overloaded with information at once and to also preserve and promote intelligibility and prevent our audience from getting distracted with too many points. This dataset intends to show the general patterns of spatial distribution of public schools in King county and it functions as a hook of the project.
-
+<br>
 3. The other minor datasets that we will be using include the U.S. Census Population Counts, [King County and its Cities](https://data.kingcounty.gov/Demographics/2010-U-S-Census-Population-Counts-King-County-and-/cavj-x985) and the [State Population Totals: 2010-2019](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-state-total.html) to optimize the other datasets mentioned above. Additionally, we will also use the [Cartographic Boundary Files - Shapefile](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) for our shapefiles.
 
 ## Applied Libraries and Web Services
@@ -49,24 +49,24 @@ Our target audiences are parents from each state. Consequently, we have decided 
 
 ## Defining Terms
 
-**Map of Education and Investment**
-> “Money on Students”: Spending on student instruction fees (per student), measured in dollars
+### **Map of Education and Investment**
+> **“Money on Students”:** Spending on student instruction fees (per student), measured in dollars
  
-> “Enrollment”: Total number of students enrolled in public school (in thousands of students)<br>
+> **“Enrollment”:** Total number of students enrolled in public school (in thousands of students)<br>
 
-> “Instruction Expenditure”: Total expenditure (in millions of dollars) for all students spent on instruction fees 
+> **“Instruction Expenditure”:** Total expenditure (in millions of dollars) for all students spent on instruction fees 
  
-> “Federal Revenue”: Total amount allocated to public schools, measures in thousands of dollars
+> **“Federal Revenue”:** Total amount allocated to public schools, measures in thousands of dollars
  
 
-**Map of Academic Achievement**
-> “Verbal SAT”: Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
+### **Map of Academic Achievement**
+> **“Verbal SAT”:** Percentage of students who received a 200-500 on the Critical Reading portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources. 
 
-> “Math SAT”: Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources.
+> **“Math SAT”:** Percentage of students who received a 200-500 on the Math portion of the SAT. The range 200-500 was selected, as scores in a lower range are less likely to be impacted by private tutoring and other resources.
 
-> “Art GPA”: Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA
+> **“Art GPA”:** Average GPAs, consisting of Arts/Music GPA, English GPA, Foreign Languages GPA, and Social Sciences GPA
 
-> “STEM GPA”: Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA
+> **“STEM GPA”:** Average GPAs, consisting of Mathematics GPA and Natural Sciences GPA
 
 ## Recognition of Potential Biases
 We recognize the inherent biases of SAT scores as a reflection of education level. Students of a lower family income level tend to score lowest, whereas students of a higher family income level have much higher average scores. Disadvantage can mostly be attributed to test preparation, but may also have something to do with “stereotype threat”, where “reminding students of their racial group before taking a test can impact their score” (Elsesser, 2019). Additionally, at this point in time, points were deducted for incorrect answers. With this in mind, students took different approaches than others when it came to the exam that could affect performance. Therefore, while our data is sound, SAT scores themselves are not always reflective of a population and how they otherwise perform academically. 
