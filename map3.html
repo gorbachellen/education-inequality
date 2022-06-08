@@ -71,7 +71,7 @@
     <div id="legend"></div>
     <script>
         mapboxgl.accessToken =
-            'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw';
+            'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw';/* CHANGE MAYBE */
         let map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/dark-v10',
@@ -89,18 +89,18 @@
 
             // when loading a geojson, there are two steps
             // add a source of the data and then add the layer out of the source
-            map.addSource('Washington_State_Public_Schools', {
+            map.addSource('EDGE_GEOCODE_PUBLICSCH_2021', {
                 type: 'geojson',
-                data: 'assets/Washington_State_Public_Schools.geojson'
+                data: 'assets/EDGE_GEOCODE_PUBLICSCH_2021.geojson'
             });
 
             map.addLayer({
                     'id': 'school-point',
                     'type': 'circle',
-                    'source': 'Washington_State_Public_Schools',
+                    'source': 'EDGE_GEOCODE_PUBLICSCH_2021',
                     'minzoom': 5,
                     'paint': {
-                        // increase the radii of the circle as the zoom level and dbh value increases
+                        // increase the radii of the circle as the zoom level and income value increases
                         'circle-radius': {
                             'property': 'mag',
                             'stops': [
