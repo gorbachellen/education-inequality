@@ -154,6 +154,10 @@
 			let legend_point = document.getElementById('legend-point');
 			var labels = ['<strong>Ap Courses</strong>'],
 				vbreak;
+			vbreak = 'No Data'
+			labels.push(
+				'<p class="break"><i class="dot" style="background: rgb(0,0,0); width: 6px; height: 6px; "></i> <span class="dot-label" style="top: 3px;">' + vbreak +
+				'</span></p>');
 			for (var i = 0; i < ap_number.length; i++) {
 				vbreak = ' >' + ap_number[i];
 				let dot_radii = 2 * radii[i];
