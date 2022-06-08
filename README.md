@@ -20,6 +20,12 @@ Through our final project, we hope to map the disparities between education oppo
 
 Demonstrating how living in one location in one’s childhood will impact his or her entire life due to the financial status or the funding from local government to the public school system is the vital factor that highlights the significance of our project. However, our project is not intended to point fingers and create a person or entity to blame. Rather, we want to show the milestones of improvements in each area with our map and give potential advice on the reallocation of public school resources from the federal government.
 
+![Map of Investments](img/investment.jpeg)
+Map of Education Investments
+
+![Map of Achievements](img/achievement.jpeg)
+Map of Academic Achievements
+
 ## Target Audience
 
 Our target audiences are parents from each state. Consequently, we have decided to forgo jargon and instead use language that is easy to understand such as the average expenditure on the public school systems for each enrolled student and the childrens’ academic achievement in the exams. The key takeaway we want our audience to have is motivation to speak up for their child because every child in the primary stage of their academic life deserves equal opportunities.
