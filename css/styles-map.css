@@ -90,8 +90,9 @@ p {
 #background {
     right: 0;
     height: 100%;
-    background: rgb(205, 194, 174, 0.8);
-    margin-top: 3.6%;
+    background: aliceblue;
+    opacity: 0.8;
+    margin-top: 3%;
     margin-bottom: 50px;
     width: 25%;
 }
@@ -133,7 +134,7 @@ a {
 #navbar-background {
     right: 0;
     width: 100%;
-    height: 6.5%;
+    height: 60px;
     position: fixed;
     top: 0;
     background: aliceblue;
