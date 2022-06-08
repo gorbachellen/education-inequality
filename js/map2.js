@@ -97,7 +97,6 @@
             let property = []
             let number = legendWrapper(index2)[0];
             let color = legendWrapper(index2)[1]
-            console.log(number)
             property.push('step');
             property.push(['get', column]);
             for (let i = 0; i < 4; i++) {

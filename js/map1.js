@@ -135,7 +135,6 @@
             let property = []
             let number = legendWrapper(index2)[0];
             let color = legendWrapper(index2)[1]
-            console.log(number)
             property.push('step');
             property.push(['get', column]);
             for (let i = 0; i < 4; i++) {
@@ -268,8 +267,8 @@
                     bottom: 30,
                     left: 60
                 },
-                width = 330 - margin.left - margin.right,
-                height = 250 - margin.top - margin.bottom;
+                width = 300 - margin.left - margin.right,
+                height = 240 - margin.top - margin.bottom;
 
             var svg = d3.select("#my_dataviz")
                 .append("svg")
