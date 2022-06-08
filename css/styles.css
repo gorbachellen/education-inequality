@@ -11298,3 +11298,20 @@ section {
   padding-top: 9rem;
   padding-bottom: 9rem;
 }
+
+.map-overlay {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  text-align: center;
+}
+
+#navbar-background {
+  right: 0;
+  width: 100%;
+  height: 6%;
+  position: fixed;
+  top: 0;
+  background: aliceblue;
+  opacity: 0.8;
+}
