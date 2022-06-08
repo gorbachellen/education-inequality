@@ -3,11 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Public School Distribution</title>
+    <title>Public School Distribution Map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <script src="js/map3.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles-map.css">
+
     <style>
         body {
             margin: 0;
@@ -21,15 +25,45 @@
             width: 100%;
         }
 
-        /* the layout of the legend panel */
-        #legend {
+        /* the layout of the legend-point panel */
+        #legend-point {
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 110px;
+            width: 150px;
+            height: 260px;
             background: #fff;
-            margin-right: 20px;
-            margin-bottom: 40px;
+            margin-right: 30px;
+            margin-bottom: 3%;
+            padding: 10px 20px 10px 10px;
+            border-radius: 3px;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #legend-background {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 20%;
+            height: 260px;
+            background: #fff;
+            margin-right: 10px;
+            margin-bottom: 3%;
+            padding: 10px 20px 10px 10px;
+            border-radius: 3px;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #legend-layer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 260px;
+            background: #fff;
+            margin-right: 180px;
+            margin-bottom: 3%;
             padding: 10px 20px 10px 10px;
             border-radius: 3px;
             text-align: center;
@@ -68,110 +102,27 @@
 
 <body>
     <div id="map"></div>
-    <div id="legend"></div>
-    <script>
-        mapboxgl.accessToken =
-            'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw';/* CHANGE MAYBE */
-        let map = new mapboxgl.Map({
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/dark-v10',
-            zoom: 5, // starting zoom
-            center: [-95.7129, 37.0902] // starting center
-        });
-
-        const grades = [4, 5, 6],
-            colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)'],
-            radii = [5, 15, 20];
-
-        //load data to the map as new layers.
-        //map.on('load', function loadingData() {
-        map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
-
-            // when loading a geojson, there are two steps
-            // add a source of the data and then add the layer out of the source
-            map.addSource('EDGE_GEOCODE_PUBLICSCH_2021', {
-                type: 'geojson',
-                data: 'assets/EDGE_GEOCODE_PUBLICSCH_2021.geojson'
-            });
-
-            map.addLayer({
-                    'id': 'school-point',
-                    'type': 'circle',
-                    'source': 'EDGE_GEOCODE_PUBLICSCH_2021',
-                    'minzoom': 5,
-                    'paint': {
-                        // increase the radii of the circle as the zoom level and income value increases
-                        'circle-radius': {
-                            'property': 'mag',
-                            'stops': [
-                                [{
-                                    zoom: 5,
-                                    value: grades[0]
-                                }, radii[0]],
-                                [{
-                                    zoom: 5,
-                                    value: grades[1]
-                                }, radii[1]],
-                                [{
-                                    zoom: 5,
-                                    value: grades[2]
-                                }, radii[2]]
-                            ]
-                        },
-                        'circle-color': {
-                            'property': 'mag',
-                            'stops': [
-                                [grades[0], colors[0]],
-                                [grades[1], colors[1]],
-                                [grades[2], colors[2]]
-                            ]
-                        },
-                        'circle-stroke-color': 'white',
-                        'circle-stroke-width': 1,
-                        'circle-opacity': 0.6
-                    }
-                },
-                'waterway-label'
-            );
-
-
-            // click on tree to view magnitude in a popup
-            map.on('click', 'school-point', (event) => {
-                new mapboxgl.Popup()
-                    .setLngLat(event.features[0].geometry.coordinates)
-                    .setHTML(`<strong>Public School:</strong> ${event.features[0].properties.mag}`)
-                    .addTo(map);
-            });
-
-        });
-
-
-        // create legend
-        const legend = document.getElementById('legend');
-
-        //set up legend grades and labels
-        var labels = ['<strong>Public School</strong>'],
-            vbreak;
-        //iterate through grades and create a scaled circle and label for each
-        for (var i = 0; i < grades.length; i++) {
-            vbreak = grades[i];
-            // you need to manually adjust the radius of each dot on the legend 
-            // in order to make sure the legend can be properly referred to the dot on the map.
-            dot_radii = 2 * radii[i];
-            labels.push(
-                '<p class="break"><i class="dot" style="background:' + colors[i] + '; width: ' + dot_radii +
-                'px; height: ' +
-                dot_radii + 'px; "></i> <span class="dot-label" style="top: ' + dot_radii / 2 + 'px;">' + vbreak +
-                '</span></p>');
-
-        }
-        // add the data source
-        const source =
-            '<p style="text-align: right; font-size:10pt">Source: <a href="https://earthquake.usgs.gov/earthquakes/">USGS</a></p>';
-        // combine all the html codes.
-        legend.innerHTML = labels.join('') + source;
-    </script>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="index.html">Education Inequality</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="map1.html">Education Investment Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="map2.html">Academic Achievement Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="map3.html">Public School Distribution Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='map-overlay' id='navbar-background'></div>
+    <div class='map-overlay' id="legend-background"></div>
+    <div class='map-overlay' id="legend-point"></div>
+    <div class='map-overlay' id="legend-layer"></div>
+    </div>
 </body>
 
 </html>

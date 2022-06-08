@@ -26,6 +26,9 @@ Map of Education Investments
 ![Map of Achievements](img/achievement.jpeg)
 Map of Academic Achievements
 
+![Map of King County Public Schools](img/map3.jpg)
+Map of King County Public Schools
+
 ## Target Audience
 
 Our target audiences are parents from each state. Consequently, we have decided to forgo jargon and instead use language that is easy to understand such as the average expenditure on the public school systems for each enrolled student and the childrens’ academic achievement in the exams. The key takeaway we want our audience to have is motivation to speak up for their child because every child in the primary stage of their academic life deserves equal opportunities.
@@ -36,7 +39,9 @@ Our target audiences are parents from each state. Consequently, we have decided 
 
 2. Another dataset that our team will use is [NCES School Locations Dataset 2020-2021](https://nces.ed.gov/programs/edge/geographic/schoollocations). This dataset is from the National Center for Education Statistics and it provides the location and name of every public school across all counties between 2020 and 2021. We plan to use the King county portion of the dataset to create a dot density map to make a distinction of where we are all currently residing and where the project was created. The reason why we are only providing a dot density for King County is to ensure that our audience is not being overloaded with information at once and to also preserve and promote intelligibility and prevent our audience from getting distracted with too many points. This dataset intends to show the general patterns of spatial distribution of public schools in King county and it functions as a hook of the project. <br>
 
-3. The other minor datasets that we will be using include the U.S. Census Population Counts, [King County and its Cities](https://data.kingcounty.gov/Demographics/2010-U-S-Census-Population-Counts-King-County-and-/cavj-x985) and the [Basic demographics by census tracts in King County based on 2012 - 2016 American Community Survey 5 Year Average](https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::demographic-base-demographic-base-area/explore?location=47.425253%2C-121.802498%2C10.00&showTable=true) to optimize the other datasets mentioned above. Additionally, we will also use the [Cartographic Boundary Files - Shapefile](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) for our shapefiles. <br>
+3. For academic achievement, our team will use school scores from the [CORGIS Dataset Project](https://corgis-edu.github.io/corgis/csv/). This dataset is from collection of voluntarily contributed from a variety of sources including solar incentive programs, utilities, installers, and the general public. We are processing the data with the SAT scores and GPA cross the country during 2005 to 2015
+
+4. The other minor datasets that we will be using include the U.S. Census Population Counts, [King County and its Cities](https://data.kingcounty.gov/Demographics/2010-U-S-Census-Population-Counts-King-County-and-/cavj-x985) and the [Basic demographics by census tracts in King County based on 2012 - 2016 American Community Survey 5 Year Average](https://gis-kingcounty.opendata.arcgis.com/datasets/kingcounty::demographic-base-demographic-base-area/explore?location=47.425253%2C-121.802498%2C10.00&showTable=true) to optimize the other datasets mentioned above. Additionally, we will also use the [Cartographic Boundary Files - Shapefile](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html) for our shapefiles. <br>
 
 ## Applied Libraries and Web Services
 * [Mapbox](https://www.mapbox.com/) for map creation
